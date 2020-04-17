@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <title>Anime Suggestion</title>
+    <style>
+        @font-face {
+            font-family: animeFont1;
+            src: url(NinjaNaruto-YOn4.ttf);
+        }
+
+        @font-face {
+            font-family: animeFont2;
+            src: url(OnePiece-zAqL.ttf);
+        }
+
+        @font-face {
+            font-family: animeFont3;
+            src: url(Bleach-8jnJ.ttf)
+        }
+
+        @font-face {
+            font-family: animeFont4;
+            src: url(animeace_i.ttf);
+        }
+
+        body,
+        html {
+            height: 100%;
+        }
+
+        .nav-link {
+            color: white;
+            padding: 2px;
+        }
+
+        .nav-link:hover {
+            color: orangered;
+        }
+
+        .nav {
+            background-color: transparent;
+        }
+
+        body {
+            background-image: url("42079.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+            transition: background-image 2s;
+            -moz-transition: background-image 2s;
+            -webkit-transition: background-image 2s;
+            -o-transition: background-image 2s;
+
+        }
+
+        .input-group {
+            font-family: animeFont4;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        #rcorners3 {
+            border-radius: 15px 50px;
+            background: #73AD21;
+            padding: 10px;
+            margin: 20px;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar-brand {
+            padding: 2px;
+        }
+
+        .show {
+            opacity: 1;
+            transition: opacity 1000ms;
+        }
+
+        .hide {
+            opacity: 0;
+            transition: opacity 1000ms;
+        }
+
+        #nav2 {
+            margin-top: 20px;
+            padding-left: 50px;
+            padding-right: 150px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            background-color: transparent;
+        }
+
+        #div1 {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            font-size: larger;
+            margin-top: 60px;
+            padding: 100px;
+        }
+
+        h2 {
+            font-family: animeFont4;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm" id="nav1">
+        <a class="navbar-brand" href="index.html">
+            <img src="site-logo.png" alt="site_logo" srcset="" style="width: 40px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link" style="font-family:animeFont1; font-size:1.25rem;  letter-spacing: 3px;"
+                        href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " style="font-family:animeFont1; font-size:1.25rem; ; letter-spacing: 3px;"
+                        href="#">NEW TO ANIME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " style=" font-family:animeFont1; font-size:1.25rem; ;letter-spacing: 3px;"
+                        href="#">ABOUT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark hide" id="nav2">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           
+                <div class="row">
+                    <form class="form-inline">
+                        <div class="col col-3">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Genre</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>Choose</option>
+                                    <option value="Shounen">Shounen</option>
+                                    <option value="Action">Action</option>
+                                    <option value="Harem">Harem</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col col-3">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Experience</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect02">
+                                    <option selected>Choose</option>
+                                    <option value="1">1 year</option>
+                                    <option value="2">2 year</option>
+                                    <option value="3">3 year</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col col-3">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Sub-Genre</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect02">
+                                    <option selected>Choose</option>
+                                    <option value="Mainstream">Mainstream</option>
+                                    <option value="Unorthodox">Unorthodox</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col col-3">
+                            <button type="submit" class="btn btn-danger btn-md btn-block">SEARCH</button>
+                        </div>
+                </div>
+           
+
+            </form>
+        </div>
+
+    </nav>
+    <div class="container" id="div1">
+        <div class="row">
+            <div class="col">
+                <h2 class="text-primary">RANDOM ANIME</h2>
+                <p class="text-light" style="font-weight:600;">Smash that generate random list button and let fate
+                    decide what show you are going
+                    to watch. If you don’t adjust any settings on the form, a random list of all the anime stored on the
+                    site will be built. This is perfect if you want to branch out to different kind of anime.</p>
+                <button type="button" class="btn btn-success btn-block text-light" onclick=""
+                    style="font-family: cursive; font-weight: bold;">LEAVE IT TO FATE!</button>
+            </div>
+            <div class="col">
+                <h2 class="text-primary">RANDOM LIST</h2>
+                <p class="text-light" style="font-weight:600;">You know what you like, and want to find a show that fits
+                    your taste. Use the
+                    dropdowns to include or exclude genres based on your preference. You can also click the advanced
+                    form option to gain more control. The result is a bunch of new anime that you know you are going to
+                    enjoy.</p>
+                <button type="button" class="btn btn-success btn-block" onclick="fadeOutEffect()"
+                    style="font-family: cursive; font-weight: bold;">DECIDE YOUR DESTINY!</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function () {
+
+        function changeImage() {
+            var BackgroundImg = ["36630.jpg", "42079.jpg", "808516.jpg", "842599.jpg"];
+            var i = Math.floor((Math.random() * 4));
+            document.body.style.backgroundImage = 'url("' + BackgroundImg[i] + '")';
+        }
+        window.setInterval(changeImage, 10000);
+
+    }
+    function animeList() {
+        var x = document.getElementById("div1");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    function fadeOutEffect() {
+        document.getElementById("div1").classList.add('hide');
+        fadeInEffect();
+    }
+    function fadeInEffect() {
+        document.getElementById("nav2").classList.remove('hide');
+        document.getElementById('nav2').classList.add('show');
+    }
+</script>
+
+</html>
