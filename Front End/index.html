@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -102,11 +104,8 @@
 
         #nav2 {
             margin-top: 20px;
-            padding-left: 50px;
-            padding-right: 150px;
             padding-top: 5px;
-            padding-bottom: 5px;
-            background-color: transparent;
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
         #div1 {
@@ -119,7 +118,15 @@
 
         h2 {
             font-family: animeFont4;
-            font-weight: bold;
+           
+
+        }
+       
+
+        .form {
+            margin-top: 20px;
+            width: 100%;
+            font-weight: bolder;
         }
     </style>
 </head>
@@ -150,63 +157,62 @@
             </ul>
         </div>
     </nav>
+
     <nav class="navbar navbar-expand-lg navbar-dark hide" id="nav2">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-           
-                <div class="row">
-                    <form class="form-inline">
-                        <div class="col col-3">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Genre</label>
-                                </div>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option selected>Choose</option>
-                                    <option value="Shounen">Shounen</option>
-                                    <option value="Action">Action</option>
-                                    <option value="Harem">Harem</option>
-                                </select>
+            <form action="" method="post">
+                <div class="form-inline ml-5">
+                    <div class="col col-md-auto ml-5 mr-5">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Genre</label>
                             </div>
+                            <select class="form-control" id="inputGroupSelect01">
+                                <option selected>Choose</option>
+                                <option value="Shounen">Shounen</option>
+                                <option value="Action">Action</option>
+                                <option value="Harem">Harem</option>
+                            </select>
                         </div>
-                        <div class="col col-3">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Experience</label>
-                                </div>
-                                <select class="custom-select" id="inputGroupSelect02">
-                                    <option selected>Choose</option>
-                                    <option value="1">1 year</option>
-                                    <option value="2">2 year</option>
-                                    <option value="3">3 year</option>
-                                </select>
+                    </div>
+                    <div class="col col-md-auto ml-5 mr-5">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Experience</label>
                             </div>
+                            <select class="form-control" id="inputGroupSelect02">
+                                <option selected>Choose</option>
+                                <option value="1">1 year</option>
+                                <option value="2">2 year</option>
+                                <option value="3">3 year</option>
+                            </select>
                         </div>
-                        <div class="col col-3">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Sub-Genre</label>
-                                </div>
-                                <select class="custom-select" id="inputGroupSelect02">
-                                    <option selected>Choose</option>
-                                    <option value="Mainstream">Mainstream</option>
-                                    <option value="Unorthodox">Unorthodox</option>
-                                </select>
+                    </div>
+                    <div class="col col-md-auto ml-5 mr-5">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">Sub-Genre</label>
                             </div>
+                            <select class="form-control" id="inputGroupSelect03">
+                                <option selected>Choose</option>
+                                <option value="Mainstream">Mainstream</option>
+                                <option value="Unorthodox">Unorthodox</option>
+                            </select>
                         </div>
-                        <div class="col col-3">
-                            <button type="submit" class="btn btn-danger btn-md btn-block">SEARCH</button>
-                        </div>
+                    </div>
+                    <div class="col col-md-auto ml-2">
+                        <button type="button" class="btn btn-info btn-md" style="font-weight:bold; font-family: cursive;" onclick="sendData()">SEARCH <i class="fa fa-search"></i></button>
+                    </div>
                 </div>
-           
-
             </form>
         </div>
 
     </nav>
+
     <div class="container" id="div1">
         <div class="row">
             <div class="col">
@@ -233,14 +239,12 @@
 </body>
 <script>
     window.onload = function () {
-
         function changeImage() {
             var BackgroundImg = ["36630.jpg", "42079.jpg", "808516.jpg", "842599.jpg"];
             var i = Math.floor((Math.random() * 4));
             document.body.style.backgroundImage = 'url("' + BackgroundImg[i] + '")';
         }
         window.setInterval(changeImage, 10000);
-
     }
     function animeList() {
         var x = document.getElementById("div1");
@@ -257,6 +261,31 @@
     function fadeInEffect() {
         document.getElementById("nav2").classList.remove('hide');
         document.getElementById('nav2').classList.add('show');
+    }
+    function sendData()
+    {
+        var gen=document.getElementById("inputGroupSelect01");
+        var genre=gen.options[gen.selectedIndex].value;
+        var exp=document.getElementById("inputGroupSelect02");
+        var experience=exp.options[exp.selectedIndex].value;
+        var subgen=document.getElementById("inputGroupSelect03");
+        var subGenre=subgen.options[subgen.selectedIndex].value;
+        //console.log(genre+" "+experience+" "+subGenre);                       /*For testing whether data is being selected from page or not*/
+        var data=JSON.stringify({"genre":genre,"experience":experience,"subgenre":subGenre});
+        var xhr = new XMLHttpRequest();    
+        xhr.addEventListener("readystatechange", function () {
+                if (this.readyState === 4) {
+                    let response = this.responseText;
+                    let anime = JSON.parse(response);
+                    console.log("Anime Name:" + anime.id);
+                    document.getElementById("name").innerHTML=anime.id;
+                }
+            });
+            xhr.open("POST", "http://localhost:8080/send");
+            xhr.setRequestHeader("Accept", "application/json");
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(data);
+
     }
 </script>
 
