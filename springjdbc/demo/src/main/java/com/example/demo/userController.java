@@ -43,12 +43,21 @@ public class userController {
 		d.setGenre(userDetails.getGenre());
 		d.setExp(userDetails.getExp());
 		d.setStream(userDetails.getStream());
-	/*	inputData d1=new inputData();
-		 d1.setRes(d.getRes());
-		 System.out.println("DATA IN THE CONTROLLER CLASS IS "+d );*/
 		Map<String,String> out=new HashMap<String,String>(d.getOut());
 		return out;
-		//return new ResponseEntity<inputData>(d, HttpStatus.OK);
+		
 	}
+	 
+	
+	 @PostMapping(path="/random", consumes=
+	    	{ MediaType.APPLICATION_XML_VALUE,  MediaType.APPLICATION_JSON_VALUE }, 
+	    	produces= { MediaType.APPLICATION_XML_VALUE,  MediaType.APPLICATION_JSON_VALUE })
+	 public Map<String,String> randomReturn()
+	 {
+		 randomizer d=new randomizer();
+		 Map<String,String> out=new HashMap<String,String>(d.getOutrand());
+		 return out;
+	 }
+	 
 	
 }
